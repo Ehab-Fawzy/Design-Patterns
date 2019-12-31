@@ -2,14 +2,15 @@ package observer_pattern;
 
 public class HexObserver extends observer {
 	
-	public HexObserver() {
+	public HexObserver( Subject object ) {
 		// TODO Auto-generated constructor stub
-		observer.subject.insertObserver(this);
+		this.subject = object;
+		this.subject.insertObserver(this);
 	}
 	
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		System.out.println( "Binary: " +  Integer.toHexString( observer.subject.getState() ) );
+		System.out.println( "Binary: " +  Integer.toHexString( this.subject.getState() ) );
 	}
 }
